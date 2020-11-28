@@ -29,3 +29,4 @@ class Rnn_simple(nn.Module):
         X=torch.cat((X[0],X[-1]),-1)
         X=self.decoder(X)
         return X
+
