@@ -83,7 +83,7 @@ if __name__=="__main__":
 
     X=[line.split() for line in open("texts.txt",encoding="utf-8").readlines()]
     X=texts_encode(X)
-    X=np.array(cut(X,20))
+    X=np.array(cut(X,10))
     X=torch.LongTensor(X)
 
 

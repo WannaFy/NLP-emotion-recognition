@@ -36,10 +36,10 @@ def get_input(sentence,network):
         for word in t:
             if word not in stopwords:
                 X.append(dictionary.get(word,0))
-      #  if (len(X)<20):
-      #      X=X+[0 for i in range(20-len(X))]
-      #  else:
-      #      X=X[:20]
+        if (len(X)<10):
+            X=X+[0 for i in range(10-len(X))]
+        else:
+            X=X[:10]
         X=np.expand_dims(X,0)
 
         y=network(torch.LongTensor(X))
@@ -61,7 +61,7 @@ if __name__=="__main__":
     network=Rnn_simple(Vocab,embed_size,num_hiddens,num_layers)
     network.load_state_dict(torch.load("Rnn-simple.pkl"))
 
-    sentence=input("please input the setence you want to test:          'Q'or 'q' to quit!\n" )
+    sentence=input("please input the setence you want to test: more than 10 words and no more than 50 words         'Q'or 'q' to quit!\n" )
     get_input(sentence,network)
 
 
