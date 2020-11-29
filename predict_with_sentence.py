@@ -83,4 +83,4 @@ def run_emotion_detection():
 
 if __name__ == "__main__":
     run_emotion_detection()
-    raw_input("Press <enter>")
+    input("Press <enter> to quit.")
